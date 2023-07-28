@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>BIO</title>
+</head>
+
+<body>
+
+    <button id="kezdo">Kezdőoldal</button><button id="szolgaltat">Szolgáltatásaink</button><button
+        id="rendeles">Rendelés</button>
+
+    <div id="container"></div>
+    <script>
+        $('#kezdo').click(function () {
+            window.location.hash = '#kezdooldal';
+            $('#container').load('kezdo.html');
+        })
+
+        $('#szolgaltat').click(function () {
+            window.location.hash = '#szolgaltatas';
+            $('#container').load('szolgaltat.html');
+        })
+
+        $('#rendeles').click(function () {
+            window.location.hash = '#rendeles';
+            $('#container').load('rendel.html');
+        })
+
+        if (window.location.hash) {
+            $(window.location.hash).click();
+        } else {
+            $('#kezdo').click()
+        }
+    </script>
+
+</body>
+
+</html>
